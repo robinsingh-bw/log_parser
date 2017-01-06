@@ -1,0 +1,3 @@
+module LogParser
+  # Your code goes here...
+end
