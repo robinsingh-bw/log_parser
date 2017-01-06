@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+
+require "byebug"
+
+lines = File.read(ARGV[0]).split("\n")
+page_views = {}
+lines.each do |line|
+  page, ip = line.split ' '
+  page_views[page] ||= []
+  page_views[page] << ip
+end
+
+total_views = {}
+total_unique_views = {}
+page_views.each do |page, ips|
+  total_views[page] = ips.count
+  total_unique_views[page] = ips.uniq.count
+end
+
+total_views = total_views.sort_by { |page, count| count }.reverse
+total_unique_views = total_unique_views.sort_by { |page, count| count }.reverse
+
+puts "Most page views"
+total_views.each do |page, count|
+  puts "#{page} #{count} visits"
+end
+
+puts "\nMost unique page views"
+total_unique_views.each do |page, count|
+  puts "#{page} #{count} visits"
+end

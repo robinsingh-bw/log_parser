@@ -1,23 +1,15 @@
 # LogParser
 
-TODO: Delete this and the text above, and describe your gem
+Parses a log file to display the most visited pages.
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'log_parser'
-```
-
-And then execute:
+Clone this repo and execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install log_parser
-
 ## Usage
 
-TODO: Write usage instructions here
+Execute:
+
+    $ bin/parser './spec/fixtures/webserver.log'
