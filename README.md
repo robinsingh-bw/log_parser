@@ -12,4 +12,4 @@ Clone this repo and execute:
 
 Execute:
 
-    $ bin/parser './spec/fixtures/webserver.log'
+    $ bin/parser 'webserver.log'

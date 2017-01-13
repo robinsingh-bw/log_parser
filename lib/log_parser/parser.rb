@@ -22,12 +22,12 @@ module LogParser
         reverse
     end
 
-    def self.from_file(file_path)
-      from_array(File.read(file_path).split("\n"))
-    end
-
     def self.from_array(lines)
       new(lines.map{|line| Entry.new(*line.split(' ')) })
+    end
+
+    def self.from_file(file_path)
+      from_array(File.read(file_path).split("\n"))
     end
   end
 end
